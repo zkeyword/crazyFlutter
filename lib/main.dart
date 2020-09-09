@@ -4,7 +4,6 @@ import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:crazy/routers/application.dart';
 import 'package:crazy/routers/routers.dart';
-import 'package:crazy/pages/home.dart';
 
 void main() {
   runApp(MyApp());
@@ -27,8 +26,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return RestartWidget(
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         onGenerateRoute: Application.router.generator,
-        theme: ThemeData(backgroundColor: Colors.white),
+        theme: ThemeData(
+            backgroundColor: Colors.white,
+            appBarTheme: AppBarTheme(elevation: 1),
+            buttonTheme: ButtonThemeData(minWidth: 44.0),
+            scaffoldBackgroundColor: Color(0xFFEDEDED)),
       ),
     );
   }
