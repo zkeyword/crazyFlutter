@@ -63,6 +63,8 @@ flutter:
   assets:
     - assets/images/
     - assets/images/tabbar/
+    - lib/components/hb_kline_chart/mock_data/k_line.json
+    - lib/components/hb_kline_chart/mock_data/minute_line.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

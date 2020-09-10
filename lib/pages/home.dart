@@ -20,10 +20,10 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
   static List tabData = [
-    _TabBarItem('微信', Constant.assetsImagesTabbar + 'icons_outlined_chats.svg',
+    _TabBarItem('行情', Constant.assetsImagesTabbar + 'icons_outlined_chats.svg',
         Constant.assetsImagesTabbar + 'icons_filled_chats.svg'),
     _TabBarItem(
-        '通讯录',
+        '我的',
         Constant.assetsImagesTabbar + 'icons_outlined_contacts.svg',
         Constant.assetsImagesTabbar + 'icons_filled_contacts.svg'),
   ];

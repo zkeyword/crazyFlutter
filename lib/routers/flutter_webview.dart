@@ -60,7 +60,18 @@ class WebViewState extends State<FlutterWebView>
         body: SafeArea(
           //设置安全区域 ，不沉浸式
           top: true,
-          child: _showWebView(context),
+          child: Builder(builder: (BuildContext context) {
+            return Stack(
+              children: <Widget>[
+                _showWebView(context),
+                _loading
+                    ? Center(
+                        child: CircularProgressIndicator(),
+                      )
+                    : Container(),
+              ],
+            );
+          }),
         ));
   }
 
@@ -71,7 +82,7 @@ class WebViewState extends State<FlutterWebView>
   ///初始化webview显示
   Widget _showWebView(BuildContext context) {
     return WebView(
-      initialUrl: _webUrl,
+      initialUrl: widget.url,
 
       ///初始化url
       javascriptMode: JavascriptMode.unrestricted,
