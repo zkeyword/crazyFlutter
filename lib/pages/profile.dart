@@ -5,6 +5,8 @@ import 'package:crazy/routers/fluro_navigator.dart';
 import 'package:crazy/components/hb_kline_chart/hb_chart_data_util.dart';
 import 'package:crazy/components/hb_kline_chart/hb_k_line_chart.dart';
 import 'package:crazy/components/hb_kline_chart/hb_minute_line_chart.dart';
+import 'package:provider/provider.dart';
+import 'package:crazy/providers/test_provider.dart';
 
 class ProfilePage extends StatelessWidget {
   @override
@@ -35,12 +37,14 @@ class ProfilePage extends StatelessWidget {
             )
           ]),
       drawer: Drawer(
-        child: ListTile(
-          leading: Icon(Icons.change_history),
-          title: Text('Screen2'),
-          onTap: () {
-            // Navigator.of(context).pushNamed("/b");
-          },
+        child: Center(
+          child: ListTile(
+            leading: Icon(Icons.change_history),
+            title: Text('Screen2'),
+            onTap: () {
+              Provider.of<TestProvider>(context, listen: false).setVal('test');
+            },
+          ),
         ),
         elevation: 20.0,
       ),

@@ -2,8 +2,12 @@ import 'dart:io';
 import 'package:flutter/services.dart';
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:crazy/routers/application.dart';
 import 'package:crazy/routers/routers.dart';
+import 'package:crazy/providers/tab_bar_provider.dart';
+import 'package:crazy/providers/keyboard_provider.dart';
+import 'package:crazy/providers/test_provider.dart';
 
 void main() {
   runApp(MyApp());
@@ -24,17 +28,23 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RestartWidget(
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        onGenerateRoute: Application.router.generator,
-        theme: ThemeData(
-            backgroundColor: Colors.white,
-            appBarTheme: AppBarTheme(elevation: 1),
-            buttonTheme: ButtonThemeData(minWidth: 44.0),
-            scaffoldBackgroundColor: Color(0xFFEDEDED)),
-      ),
-    );
+    return MultiProvider(
+        providers: [
+          ChangeNotifierProvider(create: (_) => TabBarProvider()),
+          ChangeNotifierProvider(create: (_) => KeyboardProvider()),
+          ChangeNotifierProvider(create: (_) => TestProvider()),
+        ],
+        child: RestartWidget(
+          child: MaterialApp(
+            debugShowCheckedModeBanner: false,
+            onGenerateRoute: Application.router.generator,
+            theme: ThemeData(
+                backgroundColor: Colors.white,
+                appBarTheme: AppBarTheme(elevation: 1),
+                buttonTheme: ButtonThemeData(minWidth: 44.0),
+                scaffoldBackgroundColor: Color(0xFFEDEDED)),
+          ),
+        ));
   }
 }
 

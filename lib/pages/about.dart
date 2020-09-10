@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:crazy/providers/test_provider.dart';
 
 TextStyle bold24Roboto = new TextStyle(
   color: Colors.white,
@@ -9,6 +11,7 @@ TextStyle bold24Roboto = new TextStyle(
 class AboutPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final provider = Provider.of<TestProvider>(context);
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -33,7 +36,7 @@ class AboutPage extends StatelessWidget {
             style: bold24Roboto,
           ),
           Text("I am Dart"),
-          Text("I am Dart"),
+          Text(provider.val),
         ],
       ),
     );
