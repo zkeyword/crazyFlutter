@@ -1,20 +1,33 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
+
 import 'package:crazy/routers/fluro_navigator.dart';
 import 'package:crazy/components/hb_kline_chart/hb_chart_data_util.dart';
 import 'package:crazy/components/hb_kline_chart/hb_k_line_chart.dart';
 import 'package:crazy/components/hb_kline_chart/hb_minute_line_chart.dart';
-import 'package:provider/provider.dart';
 import 'package:crazy/providers/test_provider.dart';
 
 class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    String actionTxt = "变灰";
+
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
         title: Text("ProfilePage"),
+        actions: <Widget>[
+          InkWell(
+            onTap: () {},
+            child: Container(
+              margin: EdgeInsets.only(right: 16),
+              alignment: Alignment.center,
+              child: Text(actionTxt),
+            ),
+          )
+        ],
       ),
       body: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,

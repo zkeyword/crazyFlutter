@@ -44,6 +44,18 @@ dependencies:
   # 状态共享 https://github.com/rrousselGit/provider
   provider: ^4.3.2
 
+  # 幻灯片 https://github.com/best-flutter/flutter_swiper
+  flutter_swiper: ^1.1.6
+
+  # 上拉/下拉刷新 https://github.com/xuelongqy/flutter_easyrefresh
+  flutter_easyrefresh: ^2.1.1
+
+  # 图片缓存 https://github.com/Baseflow/flutter_cached_network_image
+  cached_network_image: ^2.2.0+1
+
+  # 闪烁效果 https://github.com/hnvn/flutter_shimmer
+  shimmer: ^1.1.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
