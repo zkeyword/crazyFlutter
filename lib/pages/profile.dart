@@ -88,9 +88,6 @@ class _TestPageState extends State<TestPage> {
       body: ListView(
         children: <Widget>[
           HBMinuteLineChart(datas: datas),
-          HBKLineChart(
-            datas: klineDatas,
-          )
         ],
       ),
     );
